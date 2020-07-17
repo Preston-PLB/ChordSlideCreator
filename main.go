@@ -26,7 +26,10 @@ func main() {
 
 	defer ui.Close()
 
+	renderEvent := make(chan byte)
+
 	ui.Bind("add", func(a, b int) int { return a + b })
+	ui.Bind("render", func() { renderEvent <- 1 })
 
 	ln, err := net.Listen("tcp", "127.0.0.1:0")
 	if err != nil {
@@ -40,6 +43,16 @@ func main() {
 
 	sigc := make(chan os.Signal)
 	signal.Notify(sigc, os.Interrupt)
+
+	go func() {
+		for {
+			select {
+			case <-renderEvent:
+				filePath := ui.Eval(`document.getElementsByName('files')[0].value`)
+				fmt.Print(filePath)
+			}
+		}
+	}()
 
 	select {
 	case <-sigc:
