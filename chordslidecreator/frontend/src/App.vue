@@ -1,18 +1,53 @@
 <template>
-  <div id="app">
-    <img alt="Wails logo" src="./assets/images/logo.png" class="logo zoomIn">
-    <HelloWorld/>
+  <div>
+  <div class="header">
+    <div class="title-bar">
+      <h1>Cho Slide Creator</h1>
+    </div>
+  </div>
+
+  <div class="content">
+    <FilePath />
+    <Font />
+    <Settings />
+  </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+
 import "./assets/css/main.css";
+import FilePath from "./components/FilePath";
+import Settings from "./components/Settings";
+import Font from "./components/Font"
 
 export default {
   name: "app",
   components: {
-    HelloWorld
+    Settings,
+    FilePath,
+    Font
   }
 };
 </script>
+
+<style>
+  body {
+    margin: 0;
+    color: aliceblue;
+  }
+
+  .header{
+    display: flex;
+  }
+
+  .title-bar{
+    width: 100%;
+    text-align: center;
+  }
+
+  .content {
+    display: flex;
+  }
+</style>
+

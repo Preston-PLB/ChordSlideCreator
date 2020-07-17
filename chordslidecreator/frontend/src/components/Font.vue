@@ -1,0 +1,49 @@
+<template>
+    <div class="fonts">
+        <select>
+            <option>Ubuntu</option>
+        </select>
+
+        <label class="option">
+            <p>Text Color:</p>
+            <input type="color" />
+        </label>
+    </div>
+</template>
+
+<script>
+    export default {
+        name: "Font"
+    }
+</script>
+
+<style scoped>
+    .fonts select{
+        width: 100%;
+    }
+
+    .fonts{
+        flex: 1;
+        padding: 5px;
+    }
+
+    .option{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .option p {
+        flex: 2;
+        padding: 0 10px 0 0;
+        margin: 0
+    }
+
+    .option input{
+        width: 100%;
+        flex: 1;
+        margin: 0;
+    }
+</style>
