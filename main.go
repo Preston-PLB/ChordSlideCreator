@@ -48,7 +48,7 @@ func main() {
 		for {
 			select {
 			case <-renderEvent:
-				filePath := ui.Eval(`document.getElementsByName('files')[0].value`)
+				filePath := ui.Eval(`URL.createObjectURL(document.getElementsByName('files')[0].files[0])`)
 				fmt.Print(filePath)
 			}
 		}
