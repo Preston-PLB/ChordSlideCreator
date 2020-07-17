@@ -11,6 +11,9 @@
     <Font />
     <Settings />
   </div>
+  <div class="content">
+    <button class="submit" @click="render()"> Render </button>
+  </div>
   </div>
 </template>
 
@@ -27,6 +30,26 @@ export default {
     Settings,
     FilePath,
     Font
+  },
+  methods: {
+    render(){
+      //let fontColor = Font.data()
+      //let filePath = FilePath.data()
+      let settings = Settings.data()
+
+      let songObject = {
+        Name: "",
+        PathToFile: FilePath.data(),
+        FontPath: "/usr/share/fonts/ubuntu/Ubuntu-M.ttf",
+
+        height: settings.h,
+        width: settings.w,
+      }
+      console.log("object " + songObject)
+
+      window.backend.initSong(songObject)
+
+    }
   }
 };
 </script>
@@ -34,7 +57,8 @@ export default {
 <style>
   body {
     margin: 0;
-    color: aliceblue;
+    color: white;
+    font-family: Ubuntu;
   }
 
   .header{

@@ -6,14 +6,22 @@
 
         <label class="option">
             <p>Text Color:</p>
-            <input type="color" />
+            <input type="color" v-model="color" />
+            <p>{{ color }}</p>
         </label>
+
     </div>
 </template>
 
 <script>
     export default {
-        name: "Font"
+        name: "Font",
+
+        props: {color: String},
+
+        data: function () {
+            return this.props.color;
+        }
     }
 </script>
 
@@ -25,6 +33,7 @@
     .fonts{
         flex: 1;
         padding: 5px;
+        width: 100%;
     }
 
     .option{
@@ -42,7 +51,7 @@
     }
 
     .option input{
-        width: 100%;
+        color: white;
         flex: 1;
         margin: 0;
     }

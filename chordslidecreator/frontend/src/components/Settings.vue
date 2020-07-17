@@ -13,15 +13,17 @@
             <p>Nashville Numbers</p>
             <input type="checkbox" name="nashville">
         </label>
-
-        <button id="goButton" onclick="render()">Render</button>
     </form>
     </div>
 </template>
 
 <script>
     export default {
-        name: "Settings"
+        name: "Settings",
+        props: {height: Number, width: Number, nashville: Boolean},
+        data: function(){
+            return {h: this.props.height, w: this.props.width, nash: this.props.nashville}
+        }
     }
 </script>
 
@@ -46,6 +48,7 @@
     }
 
     .option input{
+        color:white;
         flex: 1;
         margin: 0;
     }

@@ -2,14 +2,18 @@
     <div class="files">
     <label class="option vertical-flex">
         <p>Select your files</p>
-        <input type="text" name="files" placeholder="~/Documents/Songs/overcome.cho"/>
+        <input type="text" name="files" placeholder="~/Documents/Songs/overcome.cho" v-model="path"/>
     </label>
     </div>
 </template>
 
 <script>
     export default {
-        name: "FilePath"
+        name: "FilePath",
+        props: {path: String},
+        data: function(){
+            return this.props.path + ""
+        }
     }
 </script>
 
@@ -29,7 +33,6 @@
         flex-direction: column;
     }
 
-
     .option p {
         flex: 2;
         padding: 0 10px 0 0;
@@ -37,6 +40,7 @@
     }
 
     .option input{
+        color: white;
         flex: 1;
         margin: 0;
     }
