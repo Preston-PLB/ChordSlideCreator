@@ -11,9 +11,6 @@
     export default {
         name: "FilePath",
         props: {path: String},
-        data: function(){
-            return this.props.path + ""
-        }
     }
 </script>
 

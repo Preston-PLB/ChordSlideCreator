@@ -19,9 +19,6 @@
 
         props: {color: String},
 
-        data: function () {
-            return this.props.color;
-        }
     }
 </script>
 

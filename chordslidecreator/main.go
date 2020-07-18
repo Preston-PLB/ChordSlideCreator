@@ -16,7 +16,7 @@ func main() {
 
 	app := wails.CreateApp(&wails.AppConfig{
 		Width:  1024,
-		Height: 383,
+		Height: 768,
 		Title:  "ChordSlideCreator",
 		JS:     js,
 		CSS:    css,

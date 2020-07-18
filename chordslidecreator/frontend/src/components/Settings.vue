@@ -21,9 +21,6 @@
     export default {
         name: "Settings",
         props: {height: Number, width: Number, nashville: Boolean},
-        data: function(){
-            return {h: this.props.height, w: this.props.width, nash: this.props.nashville}
-        }
     }
 </script>
 
